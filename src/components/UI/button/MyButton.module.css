@@ -1,0 +1,20 @@
+.btn {
+    display: block;
+    padding: 5px 15px;
+    color: white;
+    font-size: 14px;
+    background-color: midnightblue;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: mediumorchid;
+}
+
+.btn:disabled {
+    cursor: default;
+    background-color: lightgray;
+}

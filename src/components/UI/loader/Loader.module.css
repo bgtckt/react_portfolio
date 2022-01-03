@@ -1,0 +1,22 @@
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 7px solid midnightblue;
+    animation: resize 2s infinite linear;
+}
+
+.loader__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+@keyframes resize {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+    }
+}

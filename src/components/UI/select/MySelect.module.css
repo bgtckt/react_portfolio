@@ -1,0 +1,13 @@
+.select__wrapper {
+    margin-top: 10px;
+}
+
+.select {
+    margin-top: 5px;
+    font: inherit;
+    background-color: aliceblue;
+}
+
+.select:focus {
+    outline: none;
+}

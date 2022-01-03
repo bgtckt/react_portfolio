@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(0, 126, 255, 1), rgba(165, 143, 255, 1), rgba(243, 143, 255, 1));
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'El Messiri', 'Arial', sans-serif;
+    color: midnightblue;
+}
+
+.library {
+    width: 60%;
+    margin: 20px;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.library__form {
+    width: 100%;
+    padding: 20px 15%;
+    border-top: 1px solid midnightblue;
+    border-bottom: 1px solid midnightblue;
+}
+
+@media (min-width: 1024px) {
+    .library__form {
+        padding: 20px 25%;
+    }
+}
+
+.library__message {
+    margin-top: 10px;
+}
+
+.bookPage {
+    margin: 20px;
+    width: 500px;
+    padding: 10px 0 0 0;
+    background-color: lavender;
+    border: 2px solid midnightblue;
+    border-radius: 20px;
+}
+
+.bookPage__title {
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.bookPage__img {
+    width: 200px;
+    height: 350px;
+    display: block;
+    margin: 5px auto;
+}
+
+.bookPage__info {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.bookPage__description {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+    border-top: 1px solid midnightblue;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.bookPage__error {
+    margin-bottom: 10px;
+}
+
+.books__list {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book__card {
+    width: 200px;
+    padding-bottom: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: aliceblue;
+    border: 2px solid midnightblue;
+    border-radius: 12px;
+    box-shadow: 0 0 5px midnightblue;
+    cursor: pointer;
+}
+
+.book__img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.book__title {
+    margin: 10px 0;
+    padding: 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.book__author {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.book__info {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 3px solid indigo;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+}
+
+.pagBar {
+    margin: 20px 0 0 130px;
+}
+
+.pagBtn {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    margin-left: 5px;
+    color: black;
+    background-color: beige;
+    border: 2px solid indigo;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.pagBtnCurrent {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    margin-left: 5px;
+    color: white;
+    background-color: indigo;
+    border: 2px solid indigo;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.warning {
+    margin-bottom: -10px;
+    color: red;
+    font-size: 12px;
+}
+
+.currencyCard {
+    width: 160px;
+    height: 160px;
+    margin: 5px;
+    border: 2px solid indigo;
+    background: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.converter {
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px 0 20px 0;
+    background-color: beige;
+}
