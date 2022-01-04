@@ -20,9 +20,9 @@
 
 .content {
     padding: 25px;
-    background: white;
+    background-color: lavender;
     border-radius: 16px;
-    width: 500px;
+    width: 375px;
     transform: scale(0.5);
     transition: 0.4s all;
 }

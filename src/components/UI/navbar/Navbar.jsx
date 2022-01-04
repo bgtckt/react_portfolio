@@ -17,6 +17,7 @@ const Navbar = () => {
       <div className={classes.navbar__links}>
         <Link className={classes.navbar__link} to='/books'>Библиотека</Link>
         <Link className={classes.navbar__link} to='/currency'>Обмен валют</Link>
+        <Link className={classes.navbar__link} to='/clients'>Картотека</Link>
       </div>
       <MyButton
         // onClick={logOut}

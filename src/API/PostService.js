@@ -21,4 +21,13 @@ export default class PostService {
   static async getCurrencies () {
     return await axios.get('./JSON/currencies.json');
   }
+
+  static async getClients (limit = 2, page = 1) {
+    return await axios.get('https://jsonplaceholder.typicode.com/users', {
+      params: {
+        _limit: limit,
+        _page: page
+      }
+    });
+  }
 }

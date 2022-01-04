@@ -26,6 +26,12 @@
     text-decoration: none;
 }
 
+@media (max-width: 450px) {
+    .navbar__link {
+        font-size: 12px;
+    }
+}
+
 .navbar__link:hover {
     color: mediumorchid;
     border-top: 1px solid mediumorchid;
