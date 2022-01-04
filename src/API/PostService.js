@@ -17,4 +17,8 @@ export default class PostService {
   static async getBookByID (id) {
     return await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`);
   }
+
+  static async getCurrencies () {
+    return await axios.get('./JSON/currencies.json');
+  }
 }

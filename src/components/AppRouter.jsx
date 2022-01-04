@@ -5,6 +5,7 @@ import Error from "../pages/Error";
 // import {AuthContext} from "../context/context";
 import BookPage from "../pages/BookPage";
 import Library from "../pages/Library";
+import Currency from "../pages/Currency";
 
 const AppRouter = () => {
   // const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -14,6 +15,7 @@ const AppRouter = () => {
       <Route path='/' element={<Library/>}/>
       <Route path='/books' element={<Library/>}/>
       <Route exact path='/books/:id' element={<BookPage/>}/>
+      <Route path='/currency' element={<Currency/>}/>
       <Route path='*' element={<Error/>}/>
     </Routes>
     // isAuth

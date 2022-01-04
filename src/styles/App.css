@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -20,9 +20,11 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'El Messiri', 'Arial', sans-serif;
+    font-family: 'Fira Sans', 'Arial', sans-serif;
     color: midnightblue;
 }
+
+/*Library*/
 
 .library {
     width: 60%;
@@ -33,7 +35,9 @@ h1, h2, h3 {
 
 .library__form {
     width: 100%;
+    margin-top: 10px;
     padding: 20px 15%;
+    background-color: rgba(255, 255, 255, 0.5);
     border-top: 1px solid midnightblue;
     border-bottom: 1px solid midnightblue;
 }
@@ -130,6 +134,91 @@ h1, h2, h3 {
     font-size: 12px;
 }
 
+/*Currency*/
+
+.currency {
+    width: 60%;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.currency__warning {
+    color: crimson;
+    font-size: 12px;
+}
+
+.currency__error {
+    margin-bottom: 10px;
+}
+
+.currency__subtitle {
+    margin-top: 10px;
+}
+
+.currency__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.currency__card {
+    width: 140px;
+    height: 140px;
+    margin: 5px;
+    padding: 0 5px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 0 5px midnightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currency__pair {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 0;
+    border-top: 3px double midnightblue;
+    border-bottom: 3px double midnightblue;
+}
+
+.currency__converter {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid midnightblue;
+    border-bottom: 1px solid midnightblue;
+}
+
+@media (min-width: 450px) {
+    .currency__converter {
+        padding: 20px 10%;
+    }
+}
+
+@media (min-width: 700px) {
+    .currency__converter {
+        padding: 20px 25%;
+    }
+}
+
+.currency__form {
+    margin-top: 10px;
+}
+
+.currency__result {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid midnightblue;
+    background-color: aliceblue;
+}
+
+
 .card {
     display: flex;
     flex-direction: column;
@@ -167,28 +256,4 @@ h1, h2, h3 {
     border: 2px solid indigo;
     border-radius: 2px;
     cursor: pointer;
-}
-
-.warning {
-    margin-bottom: -10px;
-    color: red;
-    font-size: 12px;
-}
-
-.currencyCard {
-    width: 160px;
-    height: 160px;
-    margin: 5px;
-    border: 2px solid indigo;
-    background: beige;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.converter {
-    width: 300px;
-    margin: 20px auto;
-    padding: 10px 0 20px 0;
-    background-color: beige;
 }
