@@ -12,3 +12,19 @@
     outline: none;
     box-shadow: 0 0 5px midnightblue;
 }
+
+.input::placeholder {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .input::placeholder {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .input::placeholder {
+        font-size: 10px;
+    }
+}

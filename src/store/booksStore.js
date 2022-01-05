@@ -1,3 +1,4 @@
+// инициализация состояний переменных при первичной отрисовке компонентов
 const defaultBooksState = {
   books: []
 };
@@ -46,7 +47,12 @@ const defaultBookState = {
   book: {}
 };
 
+// функции-reduce - принимают на вход состояние и действие, которое необходимо произвести с состоянием
+// возвращают новое состояние
+// action - объект вида {type: '', payload: ''} (тип действия и значение, которое примет состояние)
 export function booksReducer (state = defaultBooksState, action) {
+  // обработка входящего типа действия
+  // если передано значение, не совпадающее с опциями в case, то возвращаем неизмененное состояние state
   switch (action.type) {
     case 'SET_BOOKS':
       return {...state, books: [...action.payload]};
@@ -154,6 +160,8 @@ export function bookReducer (state = defaultBookState, action) {
   }
 }
 
+// вспомогательная функция для формирования объекта action
+// передается в dispatch для изменения состояния
 export function setAction (type, payload) {
   const actionType = `SET_${type}`;
   return {type: actionType.toUpperCase(), payload: payload};

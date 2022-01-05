@@ -9,8 +9,10 @@ import MySelect from "../components/UI/select/MySelect";
 import PostService from "../API/PostService";
 
 const Library = () => {
+  // применяем хук useDispatch для изменения состояния из redux внутри компонента
   const dispatch = useDispatch();
 
+  // при помощи хука useSelector получаем доступ к состояниям для последуюего их изменения
   const books = useSelector(state => state.booksReducer.books);
   const searchField = useSelector(state => state.searchFieldReducer.searchField);
   const sort = useSelector(state => state.sortReducer.sort);
@@ -21,6 +23,8 @@ const Library = () => {
   const message = useSelector(state => state.messageReducer.message);
   const amount = useSelector(state => state.amountReducer.amount);
 
+  // функция для формирования данных о книге необходимого вида
+  // в случае отсутствия необходимых полей заменяем их моковыми
   function getCleanedData (data) {
     const cleanedData = data.items.map(item => {
       if (!item.volumeInfo.hasOwnProperty('publishedDate')) {
@@ -37,6 +41,7 @@ const Library = () => {
     return cleanedData;
   }
 
+  // функция для получения данных о книгах с сервера в результате поискового запроса пользователя
   async function searchBook (evt) {
     evt.preventDefault();
     if (searchField.length) {
@@ -53,6 +58,7 @@ const Library = () => {
     }
   }
 
+  // получаем массив отфильтрованых книг на основании выбранной категории (жанра)
   const filteredBooks = useMemo(() => {
     if (filter === 'All') {
       return books;
@@ -60,6 +66,7 @@ const Library = () => {
     return books.filter(book => book.volumeInfo.categories[0] === filter);
   }, [books, filter]);
 
+  // получаем массив отфильтрованнх и отсортированных книг на основании выбранного типа сортировки
   const sortedFilteredBooks = useMemo(() => {
     if (sort === 'Сначала новые') {
       return filteredBooks.sort((a, b) => +b.volumeInfo.publishedDate.substring(0, 4) - +a.volumeInfo.publishedDate.substring(0, 4));
@@ -69,6 +76,7 @@ const Library = () => {
     return filteredBooks;
   }, [filteredBooks, sort]);
 
+  // вывод строки с результатом поиска
   useEffect(() => {
     if (sortedFilteredBooks[0] && isSearchDone) {
       dispatch(setAction('message', `Количество книг по вашему запросу: ${sortedFilteredBooks.length}`));
@@ -78,6 +86,7 @@ const Library = () => {
     }
   }, [sortedFilteredBooks, isSearchDone]);
 
+  // отображение кнопки подгрузки книг для реализации пагинации
   useEffect(() => {
     if (sortedFilteredBooks[0] && amount < sortedFilteredBooks.length) {
       dispatch(setAction('ispagvisible', true));

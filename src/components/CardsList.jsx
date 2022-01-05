@@ -7,6 +7,7 @@ const CardsList = ({items, setItems}) => {
     setItems(items.filter(elem => elem.id !== card.id))
   }
 
+  // проверка на наличие карточек в массиве и вывод сообщения в случае их отсутствия
   if (items.length === 0) {
     return (
       <h3 className='clients__error'>Список клиентов пуст!</h3>

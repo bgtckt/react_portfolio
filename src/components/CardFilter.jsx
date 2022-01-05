@@ -1,6 +1,7 @@
 import React from 'react';
 import MyInput from "./UI/input/MyInput";
 
+// компонент фоля ввода для фильтрации книг при поиске
 const CardFilter = ({filter, setFilter}) => {
 
   return (

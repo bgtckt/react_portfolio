@@ -4,15 +4,20 @@ import Loader from "../components/UI/loader/Loader";
 import PostService from "../API/PostService";
 import {useDispatch, useSelector} from "react-redux";
 import {setAction} from "../store/booksStore";
+import {getClearCategories} from "../utils/bookCategories";
 
 const BookPage = () => {
+  // хук useParams применяем для получения значения id из URL текущей страницы
   const params = useParams();
+  // применяем хук useDispatch для изменения состояния из redux внутри компонента
   const dispatch = useDispatch();
 
+  // при помощи хука useSelector получаем доступ к состояниям для последуюего их изменения
   const isBookLoading = useSelector(state => state.isBookLoadingReducer.isBookLoading);
   const error = useSelector(state => state.errorReducer.error);
   const book = useSelector(state => state.bookReducer.book);
 
+  // функция для получения данных с сервера о конкретной книге по ее id
   async function getBook (id) {
     try {
       dispatch(setAction('isbookloading',true));
@@ -25,13 +30,11 @@ const BookPage = () => {
     }
   }
 
+  // производим GET-запрос по id, полученному из URL
+  // получаем данные конкретной книги при монтировании компонента
   useEffect(() => {
     getBook(params.id).then();
   }, []);
-
-  function getClearCategories (categories) {
-    return categories[0].split(' / ').filter(elem => elem !== 'General').join(', ');
-  }
 
   return (
     <div>

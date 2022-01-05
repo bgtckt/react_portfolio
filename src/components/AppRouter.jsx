@@ -1,36 +1,39 @@
 import React, {useContext} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Error from "../pages/Error";
-// import Authorization from "../pages/Authorization";
-// import {AuthContext} from "../context/context";
+import Authorization from "../pages/Authorization";
+import {AuthContext} from "../context/context";
 import BookPage from "../pages/BookPage";
 import Library from "../pages/Library";
 import Currency from "../pages/Currency";
 import Clients from "./Clients";
 
 const AppRouter = () => {
-  // const {isAuth, setIsAuth} = useContext(AuthContext);
+  // получаем доступ к переменной isAuth помещенной в контекст
+  const {isAuth, setIsAuth} = useContext(AuthContext);
 
   return (
-    <Routes>
-      <Route path='/' element={<Library/>}/>
-      <Route path='/books' element={<Library/>}/>
-      <Route exact path='/books/:id' element={<BookPage/>}/>
-      <Route path='/currency' element={<Currency/>}/>
-      <Route path='/clients' element={<Clients/>}/>
-      <Route path='*' element={<Error/>}/>
-    </Routes>
-    // isAuth
-    //   ? <Routes>
-    //     <Route path='/' element={<Library/>}/>
-    //     <Route path='/books' element={<Library/>}/>
-    //     <Route exact path='/books/:id' element={<BookPage/>}/>
-    //     <Route path='*' element={<Error/>}/>
-    //   </Routes>
-    //   : <Routes>
-    //     <Route path='/' element={<Authorization/>}/>
-    //     <Route path='*' element={<Error/>}/>
-    //   </Routes>
+    // задаем доступные маршруты в зависимости от значения переменной isAuth
+    isAuth
+      ? <Routes>
+           {/*дефолтный маршрут при загрузке главной страницы*/}
+          <Route path='/' element={<Library/>}/>
+          <Route path='/books' element={<Library/>}/>
+          {/*для создания динамического маршрута используется :id
+          id - параметр, по которому реализуется изменение адреса*/}
+          <Route exact path='/books/:id' element={<BookPage/>}/>
+          <Route path='/currency' element={<Currency/>}/>
+          <Route path='/clients' element={<Clients/>}/>
+          {/*обработка ввода URL несуществующей страницы*/}
+          <Route path='*' element={<Error/>}/>
+      </Routes>
+      : <Routes>
+          <Route path='/' element={<Authorization/>}/>
+          <Route path='/books' element={<Authorization/>}/>
+          <Route path='/currency' element={<Authorization/>}/>
+          <Route path='/clients' element={<Authorization/>}/>
+          <Route path='*' element={<Error/>}/>
+      </Routes>
   );
 };
 

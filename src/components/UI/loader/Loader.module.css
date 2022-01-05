@@ -1,6 +1,11 @@
 .loader {
-    width: 50px;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     border: 7px solid midnightblue;
     animation: resize 2s infinite linear;
@@ -9,7 +14,7 @@
 .loader__wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 @keyframes resize {

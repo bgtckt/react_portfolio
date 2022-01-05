@@ -7,11 +7,16 @@ import CurrencyConverter from "../components/CurrencyConverter";
 
 const Currency = () => {
 
+  // состояние для обработки данных о курсах валют
   const [data, setData] = useState({});
+  // состояние массива валютных пар
   const [pairs, setPairs] = useState([]);
+  // состояние базовой валюты
   const [base, setBase] = useState('EUR');
+  // состояние для обработки ошибки
   const [error, setError] = useState('');
 
+  // функция для получения данных о курсах валют
   async function loadData () {
     try {
       const response = await PostService.getCurrencies();
@@ -23,10 +28,12 @@ const Currency = () => {
     }
   }
 
+  // зашрузка данных о курсах валют при монтировании компонента
   useEffect(() => {
     loadData().then();
   }, []);
 
+  // обновление состояния массива валютных пар в зависимости от выбранной базовой валюты
   useEffect(() => {
     if (data.success) {
       data.bases.forEach(elem => {

@@ -3,12 +3,14 @@ import MyInput from "./UI/input/MyInput";
 import MyButton from "./UI/button/MyButton";
 import {useInput} from "../hooks/useValidation";
 
+// клмпонент формы для добавления новой карточки клиента
 const CardForm = ({add, items}) => {
   // применение кастомного хука для обновления состояния и валидации полей
   const name = useInput('', {isEmpty: true});
   const email = useInput('', {isEmpty: true, isEmail: true});
   const phone = useInput('', {isEmpty: true, minLength: 8});
 
+  // состояние для изменения названия компании
   const [company, setCompany] = useState('');
 
   // состояние для отслеживания валидности формы
@@ -18,6 +20,7 @@ const CardForm = ({add, items}) => {
     // отменяем событие submit, установленное браузером по умолчанию
     evt.preventDefault();
 
+    // создаем новую карточку клиента и добавляем ее к массиву карточек
     const newCard = {
       id: items.length + 1,
       name: name.value,

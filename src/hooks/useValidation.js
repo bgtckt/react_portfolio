@@ -15,7 +15,6 @@ export function useValidation (value, validations) {
       // если ключ равен значению в case, выполняем соответствующую операцию
       switch (validation) {
         case 'minLength':
-          // здесь validations[validation] = validations.minLength = 8
           value.length && value.length < validations[validation] ? setMinLengthError(true) : setMinLengthError(false);
           break;
         case 'isEmpty':

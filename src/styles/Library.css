@@ -1,0 +1,110 @@
+/*Library*/
+
+.library {
+    width: 60%;
+    margin: 20px;
+    padding: 10px 10px 0 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.library__form {
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px 15%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid midnightblue;
+    border-bottom: 1px solid midnightblue;
+}
+
+@media (min-width: 1024px) {
+    .library__form {
+        padding: 20px 25%;
+    }
+}
+
+.library__message {
+    margin-top: 10px;
+}
+
+.bookPage {
+    margin: 20px;
+    width: 500px;
+    padding: 10px 0 0 0;
+    background-color: lavender;
+    border: 2px solid midnightblue;
+    border-radius: 20px;
+}
+
+.bookPage__title {
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.bookPage__img {
+    width: 200px;
+    height: 350px;
+    display: block;
+    margin: 5px auto;
+}
+
+.bookPage__info {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.bookPage__description {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+    border-top: 1px solid midnightblue;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.bookPage__error {
+    margin-bottom: 10px;
+}
+
+.books__list {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book__card {
+    width: 200px;
+    padding-bottom: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: aliceblue;
+    border: 2px solid midnightblue;
+    border-radius: 12px;
+    box-shadow: 0 0 5px midnightblue;
+    cursor: pointer;
+}
+
+.book__img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.book__title {
+    margin: 10px 0;
+    padding: 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.book__author {
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.book__info {
+    margin-top: 5px;
+    font-size: 12px;
+}

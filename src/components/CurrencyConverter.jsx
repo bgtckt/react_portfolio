@@ -3,13 +3,21 @@ import MyInput from "./UI/input/MyInput";
 import MyButton from "./UI/button/MyButton";
 
 const CurrencyConverter = ({data}) => {
+  // состояние запроса, введенного пользователем в поле ввода
   const [query, setQuery] = useState('');
+  // результат конвертации
   const [result, setResult] = useState('');
+  // состояние для обработки ошибки
   const [error, setError] = useState('');
 
+  // функция-обработчик запроса на конвертацию
+  // проверяет запрос на валидность (соответствие шаблону "15 usd in rub")
+  // формирует результат конвертации на основании запроса пользователя
   function convertHandler (evt) {
     evt.preventDefault();
+
     const qArr = query.split(' ');
+
     if (qArr.length === 4) {
       data.forEach(elem => {
         if (elem.name === qArr[1].toUpperCase()) {

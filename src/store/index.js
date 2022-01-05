@@ -12,7 +12,6 @@ import {
 } from "./booksStore";
 
 // получаем объект rootReducer путем передачи в combineReducers объекта с функциями-reduce
-// в качестве ключей задаем произвольные названия
 const rootReducer = combineReducers({
   booksReducer: booksReducer,
   searchFieldReducer: searchFieldReducer,
@@ -29,6 +28,4 @@ const rootReducer = combineReducers({
 });
 
 // создание объекта store, который содержит встроенные методы для работы с состояниями
-// первым параметром всегда принимает reducer
-// thunk является middle ware, поэтому для его добавления в store применяется хук applyMiddleWare
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

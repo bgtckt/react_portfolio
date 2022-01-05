@@ -1,0 +1,38 @@
+/*Pagination*/
+
+.pagination__bar {
+    margin: 20px auto 10px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.pagination__btn {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.pagination__btn:hover {
+    background-color: mediumorchid;
+    color: white;
+}
+
+.pagination__btn--current {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: midnightblue;
+    border-radius: 2px;
+    cursor: pointer;
+}
