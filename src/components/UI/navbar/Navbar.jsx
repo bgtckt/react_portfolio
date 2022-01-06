@@ -15,7 +15,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className={classes.navbar}>
+    <div className={classes.navbar} data-testid='nav-bar'>
       <div className={classes.navbar__links}>
         <Link className={classes.navbar__link} to='/books'>Библиотека</Link>
         <Link className={classes.navbar__link} to='/currency'>Обмен валют</Link>

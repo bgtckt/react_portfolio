@@ -17,6 +17,7 @@ const MyModal = ({children, visible, setVisible}) => {
     <div
       className={defClassModal.join(' ')}
       onClick={() => setVisible(false)}
+      data-testid='my-modal'
     >
       {/*предотвращаем закрытие модального окна при нажатии на контентную область вне инпутов*/}
       <div

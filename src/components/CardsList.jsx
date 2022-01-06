@@ -15,7 +15,7 @@ const CardsList = ({items, setItems}) => {
   }
 
   return (
-    <div className='clients__list'>
+    <div className='clients__list' data-testid='cards-list'>
       {items.map(card =>
         <CardItem
           card={card}

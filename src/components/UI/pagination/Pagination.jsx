@@ -7,7 +7,7 @@ const Pagination = ({page, total, changePage}) => {
 
   return (
     // на основе массива страниц отрисовываем кнопки навигации с помощью метода map
-    <div className='pagination__bar'>
+    <div className='pagination__bar' data-testid='pagination-bar'>
       {pagesArray.map(btnNumber =>
         <div
           className={btnNumber === page ? 'pagination__btn--current' : 'pagination__btn'}

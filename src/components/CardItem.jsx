@@ -4,7 +4,7 @@ import MyButton from "./UI/button/MyButton";
 const CardItem = ({card, remove}) => {
 
   return (
-    <div className='clients__card'>
+    <div className='clients__card' data-testid='card-item'>
       <h4 className='clients__name'>{card.id}. {card.name}</h4>
       <div className='clients__info'>
         <p><b>email:</b> {card.email}</p>
