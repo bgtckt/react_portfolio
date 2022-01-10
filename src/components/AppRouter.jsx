@@ -17,7 +17,7 @@ const AppRouter = () => {
     isAuth
       ? <Routes>
            {/*дефолтный маршрут при загрузке главной страницы*/}
-          <Route path='/' element={<Library/>}/>
+          <Route path='/react_portfolio' element={<Library/>}/>
           <Route path='/books' element={<Library/>}/>
           {/*для создания динамического маршрута используется :id
           id - параметр, по которому реализуется изменение адреса*/}
@@ -28,7 +28,7 @@ const AppRouter = () => {
           <Route path='*' element={<Error/>}/>
       </Routes>
       : <Routes>
-          <Route path='/' element={<Authorization/>}/>
+          <Route path='/react_portfolio' element={<Authorization/>}/>
           <Route path='/books' element={<Authorization/>}/>
           <Route path='/currency' element={<Authorization/>}/>
           <Route path='/clients' element={<Authorization/>}/>
