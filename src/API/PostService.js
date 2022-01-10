@@ -22,7 +22,7 @@ export default class PostService {
 
   // метод для получения данных о курсах валют
   static async getCurrencies () {
-    return await axios.get('./JSON/currencies.json');
+    return await axios.get('https://api.jsonbin.io/b/61dc317639a33573b326b764');
   }
 
   // метод для получения данных о клмиентах в картотеке
